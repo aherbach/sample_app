@@ -1,8 +1,12 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+  
+  get "users/new"
+  
+  root 'static_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/contact', to: 'static_pages#contact', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,7 +14,7 @@ SampleApp::Application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get 'products/:id' => 'catalog#view'bun
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -27,7 +31,7 @@ SampleApp::Application.routes.draw do
   #
   #     collection do
   #       get 'sold'
-  #     end
+  #     endrails 
   #   end
 
   # Example resource route with sub-resources:
@@ -40,7 +44,7 @@ SampleApp::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', on: :collection
+  #       get 'recent', on: :collectke route
   #     end
   #   end
   
